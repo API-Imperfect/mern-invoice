@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "development") {
 		port: 1025,
 	});
 } else if (process.env.NODE_ENV === "production") {
-	tranporter = nodemailer.createTransport({
+	transporter = nodemailer.createTransport({
 		// TODO: configure mailgun in production
 	});
 }
