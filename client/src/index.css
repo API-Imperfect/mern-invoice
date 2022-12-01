@@ -1,13 +1,55 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 125vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.auth-svg {
+	font-size: 6rem;
+}
+
+.verified {
+	color: limegreen;
+	font-size: 4rem;
+	margin-top: -25px;
+}
+.google-icon {
+	font-size: 4rem;
+}
+
+.broken-heart {
+	font-size: 10rem;
+	color: crimson;
+}
+.sad-tear {
+	font-size: 10rem;
+	color: rgb(158, 158, 13);
+}
+
+/* document styling */
+.title {
+	background-color: rgba(238, 235, 235, 0.954);
+	border-bottom: 1px solid rgb(17, 65, 141);
+	color: rgb(17, 65, 141);
+	font-weight: 500;
+	padding: 15px 0px;
+	text-align: center;
+}
+
+.billItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid rgb(17, 65, 141);
+}
+.billItem p,
+h4 {
+	padding: 3px;
+}
+.toolBar {
+	margin-top: 50px;
 }
