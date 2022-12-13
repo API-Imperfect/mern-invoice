@@ -10,6 +10,7 @@ const NotFound = () => {
 					flexDirection: "row",
 					flexWrap: "wrap",
 					justifyContent: "center",
+					height: "94vh",
 				}}
 			>
 				<Typography
