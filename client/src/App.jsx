@@ -8,6 +8,8 @@ import Layout from "./components/Layout";
 import NotFound from "./components/NotFound";
 import { customTheme } from "./customTheme";
 import useTitle from "./hooks/useTitle";
+import { useSelector } from "react-redux";
+import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./features/auth/pages/RegisterPage";
 import VerifiedPage from "./features/auth/pages/VerifiedPage";
@@ -15,9 +17,11 @@ import LoginPage from "./features/auth/pages/LoginPage";
 
 const App = () => {
 	useTitle("MERN Invoice - Home");
+	const { user } = useSelector((state) => state.auth);
 	return (
 		<ThemeProvider theme={customTheme}>
 			<CssBaseline />
+			{user && <Navbar />}
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<HomePage />} />
