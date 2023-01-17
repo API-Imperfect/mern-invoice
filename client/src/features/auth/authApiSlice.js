@@ -32,6 +32,13 @@ export const authApiSlice = baseApiSlice.injectEndpoints({
 				}
 			},
 		}),
+		resendVerifyEmail: builder.mutation({
+			query: (userEmail) => ({
+				url: "/auth/resend_email_token",
+				method: "POST",
+				body: userEmail,
+			}),
+		}),
 	}),
 });
 
@@ -39,4 +46,5 @@ export const {
 	useRegisterUserMutation,
 	useLoginUserMutation,
 	useLogoutUserMutation,
+	useResendVerifyEmailMutation,
 } = authApiSlice;
