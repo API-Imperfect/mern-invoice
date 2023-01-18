@@ -44,7 +44,7 @@ const loginUser = asyncHandler(async (req, res) => {
 				roles: existingUser.roles,
 			},
 			process.env.JWT_ACCESS_SECRET_KEY,
-			{ expiresIn: "1h" }
+			{ expiresIn: "10m" }
 		);
 
 		const newRefreshToken = jwt.sign(
