@@ -6,8 +6,11 @@ import MuiAppBar from "@mui/material/AppBar";
 import MuiDrawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import { styled, useTheme } from "@mui/material/styles";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { isExpired } from "react-jwt";
+import { logOut } from "../../features/auth/authSlice";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import MenuList from "./MenuList";
@@ -81,8 +84,9 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const AuthNav = () => {
-	const { user } = useSelector((state) => state.auth);
+	const { user, googleToken } = useSelector((state) => state.auth);
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const theme = useTheme();
 	const [open, setOpen] = useState(false);
 
@@ -93,6 +97,19 @@ const AuthNav = () => {
 	const handleDrawerClose = () => {
 		setOpen(false);
 	};
+
+	useEffect(() => {
+		if (googleToken) {
+			const isMyTokenExpired = isExpired(googleToken);
+
+			if (isMyTokenExpired) {
+				dispatch(logOut());
+				navigate("/login");
+				toast.warning("Your session has expired, login again");
+			}
+		}
+	}, [navigate, dispatch, googleToken]);
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<CssBaseline />
