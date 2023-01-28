@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 
 const { randomBytes } = await import("crypto");
 
+const { Schema } = mongoose;
+
 const paymentSchema = new Schema(
 	{
 		paidBy: String,
