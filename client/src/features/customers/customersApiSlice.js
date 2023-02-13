@@ -1,6 +1,6 @@
-import { baseAPiSlice } from "../api/baseApiSlice";
+import { baseApiSlice } from "../api/baseApiSlice";
 
-export const customersApiSlice = baseAPiSlice.injectEndpoints({
+export const customersApiSlice = baseApiSlice.injectEndpoints({
 	endpoints: (builder) => ({
 		getAllUserCustomers: builder.query({
 			query: (page = 1) => `/customer/all?page=${page}`,
