@@ -103,7 +103,7 @@ export default function ({
     }
              </div>
              <div class="right">
-                 <h2 style="font-size: 38px; font-weight:200px; font-family: Arial, Helvetica, sans-serif;">${
+                 <h2 style="font-size: 38px; font-weight:200; font-family: Arial, Helvetica, sans-serif;">${
         Number(balanceDue) <= 0
             ? "Receipt"
             : document?.documentType
