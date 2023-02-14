@@ -4,6 +4,12 @@ import deleteDocument from "../controllers/documents/deleteDocument.js";
 import getAllUserDocuments from "../controllers/documents/getAllUserDocuments.js";
 import getSingleUserDocument from "../controllers/documents/getSingleUserDocument.js";
 import updateDocument from "../controllers/documents/updateDocument.js";
+import createDocumentPayment from "../controllers/documents/createPayment.js";
+import {
+	generatePDF,
+	getPDF,
+	sendDocument,
+} from "../controllers/documents/generatePDF.js";
 
 import checkAuth from "../middleware/checkAuthMiddleware.js";
 
@@ -21,5 +27,12 @@ router
 	.patch(checkAuth, updateDocument)
 	.get(checkAuth, getSingleUserDocument)
 	.delete(checkAuth, deleteDocument);
+
+// generate PDF document at /api/v1/document/generate-pdf
+router.route("/generate-pdf").post(generatePDF);
+// get pdf at /api/v1/document/get-pdf
+router.route("/get-pdf").get(getPDF);
+// send email with pdf at /api/v1/document/send-document
+router.route("/send-pdf").post(sendDocument);
 
 export default router;

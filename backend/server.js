@@ -23,6 +23,7 @@ const app = express();
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use("/docs", express.static(path.join(__dirname, "/docs")));
 
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
