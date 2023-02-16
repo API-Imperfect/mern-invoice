@@ -355,7 +355,7 @@ const CustomerCreateForm = () => {
 															variant="contained"
 															color="success"
 															size="large"
-															endiIcon={
+															endIcon={
 																<PersonAddAlt1Icon fontSize="large" />
 															}
 															disabled={

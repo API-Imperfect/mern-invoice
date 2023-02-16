@@ -29,7 +29,7 @@ const DocumentType = ({ documentType, setDocumentType }) => {
 						<em>Select Document Type</em>
 					</MenuItem>
 					<MenuItem value="Invoice">Invoice</MenuItem>
-					<MenuItem value="Invoice">Receipt</MenuItem>
+					<MenuItem value="Receipt">Receipt</MenuItem>
 					<MenuItem value="Quotation">Quotation</MenuItem>
 				</StyledSelect>
 				<FormHelperText>

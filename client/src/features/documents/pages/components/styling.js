@@ -24,7 +24,7 @@ export const statusStyling = (status) => {
 };
 
 export const DocumentTypeStyling = (documentType) => {
-	return documentType === "Reciept"
+	return documentType === "Receipt"
 		? {
 				border: "solid 1px black",
 				backgroundColor: "#76ff03",
