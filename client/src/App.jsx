@@ -30,6 +30,8 @@ import SingleCustomerPage from "./features/customers/pages/SingleCustomerPage";
 import DocCreateEditForm from "./features/documents/pages/DocCreateEditForm";
 import DocumentsPage from "./features/documents/pages/DocumentsPage";
 
+import SingleDocumentPage from "./features/documents/pages/SingleDocumentPage";
+
 const App = () => {
 	useTitle("MERN Invoice - Home");
 	const { user } = useSelector((state) => state.auth);
@@ -80,6 +82,14 @@ const App = () => {
 						<Route
 							path="create-doc"
 							element={<DocCreateEditForm />}
+						/>
+						<Route
+							path="edit-doc/:id"
+							element={<DocCreateEditForm />}
+						/>
+						<Route
+							path="document/:id"
+							element={<SingleDocumentPage />}
 						/>
 					</Route>
 

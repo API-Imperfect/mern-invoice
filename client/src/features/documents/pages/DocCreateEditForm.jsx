@@ -737,7 +737,7 @@ const DocCreateEditForm = () => {
 										item
 										sx={{
 											marginTop: "16px",
-											marginRIght: 5,
+											marginRight: 5,
 										}}
 									>
 										<TextField
