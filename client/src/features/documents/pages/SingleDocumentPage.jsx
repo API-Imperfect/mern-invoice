@@ -1,5 +1,5 @@
 import AttachEmailIcon from "@mui/icons-material/AttachEmail";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+
 import EditIcon from "@mui/icons-material/Edit";
 import {
 	Avatar,
@@ -21,7 +21,6 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { format } from "date-fns";
-// import { saveAs } from "file-saver";
 import { useEffect, useState } from "react";
 import { FaUserSecret } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
@@ -48,7 +47,7 @@ const SingleDocumentPage = () => {
 
 	const [status, setStatus] = useState("");
 	const [totalAmountReceived, setTotalAmountReceived] = useState(0);
-	// const [downloading, setDownloading] = useState(false);
+
 	const [sendEmail, setSendEmail] = useState(false);
 
 	const document = docData?.document;
@@ -68,34 +67,6 @@ const SingleDocumentPage = () => {
 			setTotalAmountReceived(totalReceived);
 		}
 	}, [document]);
-
-	// const createAndDownloadPdf = () => {
-	// 	setDownloading(true);
-	// 	axios
-	// 		.post(`/api/v1/document/generate-pdf`, {
-	// 			profile,
-	// 			document,
-	// 			balanceDue: addCurrencyCommas(
-	// 				Math.round(Number(document?.total) - totalAmountReceived)
-	// 			),
-	// 			status,
-	// 			totalAmountReceived,
-	// 		})
-
-	// 		.then(() =>
-	// 			axios.get(`/api/v1/document/get-pdf`, {
-	// 				responseType: "blob",
-	// 			})
-	// 		)
-	// 		.then((res) => {
-	// 			const pdfBlob = new Blob([res.data], {
-	// 				type: "application/pdf",
-	// 			});
-
-	// 			saveAs(pdfBlob, "myDocument.pdf");
-	// 		})
-	// 		.then(() => setDownloading(false));
-	// };
 
 	const sendPdfEmail = () => {
 		setSendEmail(true);
